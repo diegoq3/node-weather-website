@@ -9,11 +9,12 @@ const forecast = (latitude, longitude, callback) => {
             callback('Unable to connect to location services!', undefined)
         } else if(body.error){
             callback('Unable to find coordinates. Try another search.')
-        } else {
-            callback(undefined, {
+        } else {            
+            callback(undefined, {                
                 temperature: body.current.temperature,
                 feelsLike: body.current.feelslike,
-                description: body.current.weather_descriptions[0]                
+                description: body.current.weather_descriptions[0],
+                data: body.current                
             })
         }
     })

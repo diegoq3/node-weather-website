@@ -29,8 +29,9 @@ weatherForm.addEventListener('submit', (e) => {
                 return
             }
             console.log(data)
+            console.log(data.data)
             messageOne.textContent = data.location 
-            messageTwo.textContent = data.description + ", Feels like: " + data.feelsLike + " F degrees" + ", Temperature:" + data.temperature + " F degrees"
+            messageTwo.textContent = data.description + ", Humidity: " + data.data.humidity + "%" + ", Temperature:" + data.temperature + " F degrees"
         }) 
     })        
 })
